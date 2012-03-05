@@ -1,4 +1,4 @@
-fake-hwclock (0.4) UNRELEASE; urgency=low
+fake-hwclock (0.4) unstable; urgency=low
 
   * Update Standards-Version.
   * Add vcs fields to debian/control.
