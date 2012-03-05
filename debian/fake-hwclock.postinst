@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+case "${1:-}" in
+  configure|reconfigure)
+    command -v update-initramfs >/dev/null 2>&1 && update-initramfs -u
+    ;;
+esac
+
+#DEBHELPER#

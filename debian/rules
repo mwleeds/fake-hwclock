@@ -1,0 +1,42 @@
+#!/usr/bin/make -f
+package = fake-hwclock
+
+clean:
+	dh_testdir
+	dh_clean
+	find . -name '*~' | xargs rm -vf
+
+build-arch:
+build-indep:
+build:
+
+install:
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs
+	install -m 0755 fake-hwclock debian/fake-hwclock/bin
+	install -m 0755 init debian/fake-hwclock/usr/share/initramfs-tools/scripts/init-bottom/fake-hwclock
+
+binary: binary-indep binary-arch
+
+# Nothing to do here
+binary-arch:
+
+binary-indep: install
+	dh_testdir
+	dh_testroot
+	dh_installdebconf
+	dh_installchangelogs
+	dh_installdocs
+	dh_installcron
+	dh_installinit -- stop 02 0 1 6 .
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+.PHONY: binary binary-arch binary-indep build-arch build-indep clean

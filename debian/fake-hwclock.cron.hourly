@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# Simple cron script - save the current clock periodically in case of
+# a power failure or other crash
+
+/bin/fake-hwclock save
