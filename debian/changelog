@@ -1,3 +1,9 @@
+fake-hwclock (0.4) UNRELEASE; urgency=low
+
+  * Update Standards-Version.
+
+ -- Steve McIntyre <93sam@debian.org>  Wed, 22 Feb 2012 10:20:26 +0000
+
 fake-hwclock (0.3) unstable; urgency=low
 
   * Really fix the cron job to exit cleanly after package removal.
