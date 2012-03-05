@@ -14,8 +14,7 @@ install:
 	dh_testdir
 	dh_testroot
 	dh_prep
-	dh_installdirs
-	install -m 0755 fake-hwclock debian/fake-hwclock/sbin
+	dh_install
 
 binary: binary-indep binary-arch
 

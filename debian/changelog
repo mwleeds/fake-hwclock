@@ -2,6 +2,8 @@ fake-hwclock (0.4) UNRELEASE; urgency=low
 
   * Update Standards-Version.
   * Add vcs fields to debian/control.
+  * Fix debian/fake-hwclock.install to match the move to /sbin; move to
+    using dh_install.
 
  -- Steve McIntyre <93sam@debian.org>  Wed, 22 Feb 2012 10:20:26 +0000
 
