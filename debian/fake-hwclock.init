@@ -1,12 +1,14 @@
 #!/bin/sh
+
 ### BEGIN INIT INFO
 # Provides:          fake-hwclock
 # Required-Start:
 # Required-Stop:     umountroot
 # Should-Stop:       
-# Default-Start:
+# X-Start-Before:    checkroot
+# Default-Start:     S
 # Default-Stop:      0 1 6
-# Short-Description: Save the current clock at shutdown
+# Short-Description: Restore / save the current clock
 # Description:       
 ### END INIT INFO
 
@@ -15,10 +17,11 @@ set -e
 case "${1:-}" in
   stop|reload|restart|force-reload)
         echo "Stopping fake hwclock: saving system time."
-        /bin/fake-hwclock save;;
+        fake-hwclock save;;
 
-  start|status)
-        ;;
+  start)
+        echo "Starting fake hwclock: loading system time."
+        fake-hwclock load;;
 
   *)
         echo "Usage: ${0:-} {start|stop|status|restart|reload|force-reload}" >&2

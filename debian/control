@@ -9,14 +9,14 @@ Package: fake-hwclock
 Architecture: all
 Depends: ${misc:Depends}
 Suggests: cron, ntp
-Description: Save/restore system clock on machines without working realtime clock
+Description: Save/restore system clock on machines without working RTC hardware
  Some machines don't have a working realtime clock (RTC) unit, or no
  driver for the hardware that does exist. fake-hwclock is a simple set
  of scripts to save the kernel's current clock periodically (including
  at shutdown) and restore it at boot so that the system clock keeps at
- least close to realtime. This will stop the problems of needing
- filesystem checks at every boot due to the system believing it has
- travelled in time back to 1970.
+ least close to realtime. This will stop some of the problems that may
+ be caused by a system believing it has travelled in time back to
+ 1970, such as needing to perform filesystem checks at every boot.
  .
  On top of this, use of NTP is still recommended to deal with the fake
  clock "drifting" while the hardware is halted or rebooting.

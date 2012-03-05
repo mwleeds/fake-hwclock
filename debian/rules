@@ -15,8 +15,7 @@ install:
 	dh_testroot
 	dh_prep
 	dh_installdirs
-	install -m 0755 fake-hwclock debian/fake-hwclock/bin
-	install -m 0755 init debian/fake-hwclock/usr/share/initramfs-tools/scripts/init-bottom/fake-hwclock
+	install -m 0755 fake-hwclock debian/fake-hwclock/sbin
 
 binary: binary-indep binary-arch
 
@@ -30,7 +29,7 @@ binary-indep: install
 	dh_installchangelogs
 	dh_installdocs
 	dh_installcron
-	dh_installinit -- stop 02 0 1 6 .
+	dh_installinit --no-start -- start 02 S . stop 02 0 1 6 .
 	dh_compress
 	dh_fixperms
 	dh_installdeb

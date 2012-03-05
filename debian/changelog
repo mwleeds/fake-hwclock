@@ -1,5 +1,20 @@
+fake-hwclock (0.2) unstable; urgency=low
+
+  * Move to /sbin. Closes: #658587
+  * Stop working in the initramfs, just running at rcS should be
+    enough. For machines upgrading from v0.1, need to:
+    + Re-generate the initramfs to remove the old hook
+    + Force installation of an rcS script
+    Closes: #658590
+  * Fix the cron job to exit cleanly after package removal.
+    Closes: #659254
+  * Reword the Description slightly. Closes: #660610
+
+ -- Steve McIntyre <93sam@debian.org>  Mon, 20 Feb 2012 18:17:26 +0000
+
 fake-hwclock (0.1) unstable; urgency=low
 
   * Initial upload.
 
  -- Steve McIntyre <93sam@debian.org>  Tue, 31 Jan 2012 14:46:43 +0000
+
