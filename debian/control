@@ -4,6 +4,8 @@ Priority: extra
 Maintainer: Steve McIntyre <93sam@debian.org>
 Build-Depends: debhelper (>= 8)
 Standards-Version: 3.9.3.0
+Vcs-Browser: http://git.einval.com/cgi-bin/gitweb.cgi?p=fake-hwclock.git
+Vcs-Git: http://git.einval.com/git/fake-hwclock.git
 
 Package: fake-hwclock
 Architecture: all

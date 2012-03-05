@@ -1,6 +1,7 @@
 fake-hwclock (0.4) UNRELEASE; urgency=low
 
   * Update Standards-Version.
+  * Add vcs fields to debian/control.
 
  -- Steve McIntyre <93sam@debian.org>  Wed, 22 Feb 2012 10:20:26 +0000
 
