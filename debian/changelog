@@ -1,3 +1,10 @@
+fake-hwclock (0.3) unstable; urgency=low
+
+  * Really fix the cron job to exit cleanly after package removal.
+    Closes: #659254
+
+ -- Steve McIntyre <93sam@debian.org>  Wed, 22 Feb 2012 10:20:26 +0000
+
 fake-hwclock (0.2) unstable; urgency=low
 
   * Move to /sbin. Closes: #658587
