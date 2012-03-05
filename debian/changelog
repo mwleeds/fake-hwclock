@@ -4,6 +4,9 @@ fake-hwclock (0.4) UNRELEASE; urgency=low
   * Add vcs fields to debian/control.
   * Fix debian/fake-hwclock.install to match the move to /sbin; move to
     using dh_install.
+  * Check if we're trying to set the clock backwards. If so, bail unless
+    we're explicitly told to in a config file. Thanks to Barak
+    A. Pearlmutter for the idea and (some of) the code. Closes: #661146.
 
  -- Steve McIntyre <93sam@debian.org>  Wed, 22 Feb 2012 10:20:26 +0000
 
