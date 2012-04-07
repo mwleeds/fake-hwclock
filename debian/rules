@@ -29,6 +29,7 @@ binary-indep: install
 	dh_installdocs
 	dh_installcron
 	dh_installinit --no-start -- start 02 S . stop 02 0 1 6 .
+	dh_installman
 	dh_compress
 	dh_fixperms
 	dh_installdeb

@@ -1,3 +1,9 @@
+fake-hwclock (0.5) unstable; urgency=low
+
+  * Add man page, provided by Peter Green. Closes: #667580.
+
+ -- Steve McIntyre <93sam@debian.org>  Sat, 07 Apr 2012 21:53:26 +0100
+
 fake-hwclock (0.4) unstable; urgency=low
 
   * Update Standards-Version.
