@@ -2,7 +2,7 @@ Source: fake-hwclock
 Section: admin
 Priority: extra
 Maintainer: Steve McIntyre <93sam@debian.org>
-Build-Depends: debhelper (>= 8)
+Build-Depends: debhelper (>= 8), dh-systemd (>= 1.5)
 Standards-Version: 3.9.5
 Vcs-Browser: http://git.einval.com/cgi-bin/gitweb.cgi?p=fake-hwclock.git
 Vcs-Git: http://git.einval.com/git/fake-hwclock.git
