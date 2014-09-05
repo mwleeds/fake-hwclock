@@ -4,7 +4,7 @@ fake-hwclock (0.6) unstable; urgency=medium
   * Include /lib/lsb/init-functions in the init script
   * Add systemd service file and use dh-systemd to install
     appropriately. Thanks to Alexandre Detiste for the patch.
-    Closes: #760446
+    Closes: #760446 
 
  -- Steve McIntyre <93sam@debian.org>  Fri, 05 Sep 2014 16:56:21 +0100
 
