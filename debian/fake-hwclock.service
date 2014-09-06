@@ -1,11 +1,15 @@
 [Unit]
 Description=Restore / save the current clock
-Before=systemd-fsck-root.service
+Documentation=man:fake-hwclock(8)
+DefaultDependencies=no
+Before=sysinit.target
 
 [Service]
-EnvironementFile=-/etc/default/fake-hwclock
-ExecStart=fake-hwclock load $FORCE
-ExecStop=fake-hwclock save
+EnvironmentFile=-/etc/default/fake-hwclock
+ExecStart=/sbin/fake-hwclock load $FORCE
+ExecStop=/sbin/fake-hwclock save
+Type=oneshot
+RemainAfterExit=yes
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=sysinit.target
