@@ -1,4 +1,4 @@
-fake-hwclock (0.8) UNRELEASED; urgency=medium
+fake-hwclock (0.8) unstable; urgency=medium
 
   * Add protection around save, don't go backwards unless forced.
     Closes: #763589
