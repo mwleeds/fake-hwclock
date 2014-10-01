@@ -2,6 +2,7 @@ fake-hwclock (0.8) UNRELEASED; urgency=medium
 
   * Add protection around save, don't go backwards unless forced.
     Closes: #763589
+  * Suggest cron-daemon as an alternative to cron
 
  -- Steve McIntyre <93sam@debian.org>  Wed, 01 Oct 2014 12:34:30 +0100
 

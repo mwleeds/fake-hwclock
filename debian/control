@@ -10,7 +10,7 @@ Vcs-Git: http://git.einval.com/git/fake-hwclock.git
 Package: fake-hwclock
 Architecture: all
 Depends: ${misc:Depends}
-Suggests: cron, ntp
+Suggests: cron | cron-daemon, ntp
 Description: Save/restore system clock on machines without working RTC hardware
  Some machines don't have a working realtime clock (RTC) unit, or no
  driver for the hardware that does exist. fake-hwclock is a simple set
