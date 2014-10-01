@@ -1,3 +1,10 @@
+fake-hwclock (0.8) UNRELEASED; urgency=medium
+
+  * Add protection around save, don't go backwards unless forced.
+    Closes: #763589
+
+ -- Steve McIntyre <93sam@debian.org>  Wed, 01 Oct 2014 12:34:30 +0100
+
 fake-hwclock (0.7) unstable; urgency=medium
 
   * Tweak the systemd bits again.

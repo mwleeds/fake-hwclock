@@ -26,7 +26,20 @@ fi
 
 case $COMMAND in
     save)
-        date -u '+%Y-%m-%d %H:%M:%S' > $FILE
+        if [ -e $FILE ] ; then
+            SAVED="$(cat $FILE)"
+            SAVED_SEC=$(date -u -d "$SAVED" '+%s')
+            NOW_SEC=$(date -u '+%s')
+            if $FORCE || [ $NOW_SEC -ge $SAVED_SEC ] ; then
+                date -u '+%Y-%m-%d %H:%M:%S' > $FILE
+            else
+                echo "Current system time: $(date -u '+%Y-%m-%d %H:%M:%S')"
+                echo "fake-hwclock saved clock information is in the future: $SAVED"
+                echo "To force the saved system clock backwards anyway, use \"force\""
+            fi
+        else
+            date -u '+%Y-%m-%d %H:%M:%S' > $FILE
+        fi
         ;;
     load)
         if [ -e $FILE ] ; then

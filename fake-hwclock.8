@@ -1,4 +1,4 @@
-.TH FAKE-HWCLOCK 8 "5 April 2012" Debian
+.TH FAKE-HWCLOCK 8 "1 October 2014" Debian
 .SH NAME
 fake-hwclock \- Control fake hardware clock
 .SH SYNOPSIS
@@ -25,7 +25,9 @@ If no command is given then fake-hwclock acts as if the save command was used.
 .SS
 .TP
 \fBsave\fP
-Save the time to the file.
+Save the time to the file. If force is specified fake-hwclock will move the
+saved clock either backwards or forwards. Otherwise it will only move
+it forwards.
 .TP
 \fBload\fP
 Load the time from the file. If force is specified fake-hwclock will move the
