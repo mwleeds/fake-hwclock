@@ -14,6 +14,15 @@ the system is rebooted. Since lots of software assumes that time only moves
 forward this is a bad thing. NTP can (and should where practical) be used to
 sync with an external timeserver but it is not available early in the boot
 process and may be unavailable for other reasons.
+
+The design expectation of \fBfake-hwclock\fP is that it will be run
+very late at shutdown and very early at boot. This will ensure that
+fsck has a vaguely sensible idea of system time at boot and won't
+complain that the last-modified time in the filesystem is not hugely
+in the past or future. Some users may not worry about this too use
+case, in which case it is possible to modify the init system
+configuration to move things earlier/later as appropriate.
+
 .SH DESCRIPTION
 \fBfake-hwclock\fP sets and queries a fake "hardware clock" which stores the
 time in a file. This program may be run by the system administrator
