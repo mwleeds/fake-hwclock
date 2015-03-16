@@ -3,6 +3,7 @@ Description=Restore / save the current clock
 Documentation=man:fake-hwclock(8)
 DefaultDependencies=no
 Before=sysinit.target
+Conflicts=shutdown.target
 
 [Service]
 EnvironmentFile=-/etc/default/fake-hwclock

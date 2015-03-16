@@ -1,5 +1,7 @@
 fake-hwclock (0.9) UNRELEASED; urgency=medium
 
+  * Ensure fake-hwclock runs at shutdown on systemd systems too.
+    Closes: #779040. Thanks again to Alexandre Detiste for the patch.
   * Add more rationale in the man page.
 
  -- Steve McIntyre <93sam@debian.org>  Wed, 01 Oct 2014 12:34:30 +0100
