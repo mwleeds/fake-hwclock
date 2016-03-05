@@ -23,6 +23,9 @@ case "${1:-}" in
       cleanup_initramfs
       force_remove_old_init_links
     fi
+    # Add a save here to make sure we have time data; the user may
+    # reboot immediately afterwards, for example.
+    fake-hwclock save
     ;;
 
   *) :;;
