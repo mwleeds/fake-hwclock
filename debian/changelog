@@ -1,4 +1,4 @@
-fake-hwclock (0.10) UNRELEASED; urgency=medium
+fake-hwclock (0.10) unstable; urgency=medium
 
   * Add a save call to the postinst, to make sure that we save working
     time ASAP. Closes: #815833
