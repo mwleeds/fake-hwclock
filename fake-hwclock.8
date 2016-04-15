@@ -34,9 +34,9 @@ If no command is given then fake-hwclock acts as if the save command was used.
 .SS
 .TP
 \fBsave\fP
-Save the time to the file. If force is specified fake-hwclock will move the
-saved clock either backwards or forwards. Otherwise it will only move
-it forwards.
+Save the time to the file. As a sanity check, fake-hwclock will not
+move the saved clock backwards to a time/date earlier than its own
+release date. Use "force" to over-ride this check.
 .TP
 \fBload\fP
 Load the time from the file. If force is specified fake-hwclock will move the
