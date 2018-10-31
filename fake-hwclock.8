@@ -26,8 +26,8 @@ configuration to move things earlier/later as appropriate.
 .SH DESCRIPTION
 \fBfake-hwclock\fP sets and queries a fake "hardware clock" which stores the
 time in a file. This program may be run by the system administrator
-directly but is typically run by init (to load the time on startup and
-save it on shutdown) and cron (to save the time hourly).
+directly but is typically run by init or systemd (to load the time on startup
+and save it on shutdown) and cron or systemd (to save the time hourly).
 
 If no command is given then fake-hwclock acts as if the save command was used.
 .SH COMMANDS
@@ -50,8 +50,14 @@ The file used to store the time
 \fB/etc/init.d/fake-hwclock\fR
 The init script used to run fake-hwclock on startup and shutdown
 .TP
-\fB/lib/systemd/system/fake-hwclock.service\fR
-systemd service used to run fake-hwclock on startup and shutdown
+\fB/lib/systemd/system/fake-hwclock-save.service\fR
+systemd service used to save the time periodically and on shutdown
+.TP
+\fB/lib/systemd/system/fake-hwclock-restore.service\fR
+systemd service used to restore the time on startup
+.TP
+\fB/lib/systemd/system/fake-hwclock-save.timer\fR
+systemd timer used to save the time periodically, as an alternative to the cron job
 .TP
 \fB/etc/default/fake-hwclock\fR
 Settings file for the init script.

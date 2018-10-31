@@ -1,3 +1,4 @@
 fake-hwclock sbin
 etc/default/fake-hwclock etc/default
+debian/fake-hwclock-restore.service lib/systemd/system
 

@@ -1,0 +1,10 @@
+[Unit]
+Description=Save the clock time to disk periodically
+Documentation=man:fake-hwclock(8)
+Requires=fake-hwclock.service
+
+[Timer]
+OnUnitInactiveSec=1h
+
+[Install]
+WantedBy=default.target

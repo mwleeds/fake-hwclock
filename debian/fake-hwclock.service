@@ -1,16 +1,14 @@
 [Unit]
-Description=Restore / save the current clock
+Description=Save the current clock
 Documentation=man:fake-hwclock(8)
 DefaultDependencies=no
-Before=sysinit.target
-Conflicts=shutdown.target
+Before=final.target
+After=shutdown.target
 
 [Service]
 EnvironmentFile=-/etc/default/fake-hwclock
-ExecStart=/sbin/fake-hwclock load $FORCE
-ExecStop=/sbin/fake-hwclock save
+ExecStart=/sbin/fake-hwclock save
 Type=oneshot
-RemainAfterExit=yes
 
 [Install]
-WantedBy=sysinit.target
+WantedBy=final.target
