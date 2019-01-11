@@ -40,4 +40,7 @@ binary-indep: install
 	dh_md5sums
 	dh_builddeb
 
+override_dh_missing:
+	dh_missing --fail-missing
+
 .PHONY: binary binary-arch binary-indep build-arch build-indep clean
